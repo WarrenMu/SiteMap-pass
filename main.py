@@ -135,9 +135,9 @@ def check_vulnerabilities(url):
         try:
             response = requests.get(vuln_url)
             if response.status_code == 200:
-                print(f"{FAILURE_COLOR}[-] Vulnerability detected: {vuln_url}{RESET_COLOR}")
+                print(f"{FAILURE_COLOR}[-] Vulnerability not detected: {vuln_url}{RESET_COLOR}")
             else:
-                print(f"{SUCCESS_COLOR}[+] No vulnerability detected: {vuln_url}{RESET_COLOR}")
+                print(f"{SUCCESS_COLOR}[+] Vulnerability detected: {vuln_url}{RESET_COLOR}")
         except requests.exceptions.RequestException as e:
             print(f"{FAILURE_COLOR}[-] Error checking vulnerability: {vuln_url}. Error: {e}{RESET_COLOR}")
 
@@ -148,7 +148,7 @@ disallowed_urls = check_robots(url)
 # Check if sitemap.xml exists
 sitemap_urls = check_sitemap(url)
 
-# Combine disallowed URLs from robots.txt and sitemap.xml
+# # Combine disallowed URLs from robots.txt and sitemap.xml
 disallowed_urls += sitemap_urls
 
 # Print disallowed URLs
@@ -158,7 +158,7 @@ for disallowed_url in disallowed_urls:
 
 print("\n")
 
-# Check disallowed URLs
+# # Check disallowed URLs
 print(f"{Style.BRIGHT}Checking disallowed URLs:")
 check_disallowed(disallowed_urls, url)
 
