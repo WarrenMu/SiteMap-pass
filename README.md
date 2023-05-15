@@ -36,11 +36,3 @@ This is a Python script that checks the `sitemap.xml` and `robots.txt` files of 
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please create an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
-```
-``` 
-
-You can copy and paste this code snippet directly into your `README.md` file on GitHub, and it will be formatted properly.
